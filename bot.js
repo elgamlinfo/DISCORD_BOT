@@ -17,7 +17,7 @@ client.on("message", (msg) => {
     if (msg.content === "$not-mmb-me") {
         msg.member.roles.remove("819175285395423243");
     }
-    if(msg.content.includes("t")){
+    if(msg.content.includes("ذايد")){
         msg.react("❤️");
     }
 });
