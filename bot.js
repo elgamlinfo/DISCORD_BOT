@@ -7,8 +7,8 @@ client.on("ready", () => {
 });
 
 client.on("message", (msg) => {
-    if (msg.content === "ذايد") {
-        msg.channel.send("اخويااااا");
+    if (msg.content === "كيرلس") {
+        msg.channel.send("ابو نيكا");
         //msg.reply("Pong!");
     }
     if (msg.content === "$mmb-me") {
