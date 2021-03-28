@@ -9,7 +9,7 @@ const player = new Player(client);
 client.player = player;
 
 const settings = {
-    prefix: "$      "
+    prefix: "$"
 };
 
 client.player.on("trackStart", (msg, trk) => {
