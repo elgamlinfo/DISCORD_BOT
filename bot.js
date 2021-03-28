@@ -1,4 +1,6 @@
 require('dotenv').config();
+const express = require('express');
+const app = express()
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -7,7 +9,7 @@ const player = new Player(client);
 client.player = player;
 
 const settings = {
-    prefix: "$"
+    prefix: "$      "
 };
 
 client.player.on("trackStart", (msg, trk) => {
@@ -89,3 +91,8 @@ function EmptyChannel(msg) {
 
 
 client.login(process.env.BOT_TOKKEN);
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log('Server is running s on port: ' + port)
+});
