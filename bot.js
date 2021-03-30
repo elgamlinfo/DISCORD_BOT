@@ -54,14 +54,14 @@ client.on("message", async (msg) => {
     //play music
     if(command === "play" || command === "p"){
         EmptyChannel(msg);
-        await client.player.play(msg, args[0], false);
+        await client.player.play(msg, args[0], true);
     }
 
 
     //search for music
     if(command === "search"){
         EmptyChannel(msg);
-        await client.player.search(args[0])
+        await client.player.play(msg, args[0], false);
     }
 
     //pause music
