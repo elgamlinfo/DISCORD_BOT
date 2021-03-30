@@ -54,7 +54,7 @@ client.on("message", async (msg) => {
     //play music
     if(command === "play" || command === "p"){
         EmptyChannel(msg);
-        await client.player.play(msg, args[0], true);
+        await client.player.play(msg, args[0], false);
     }
 
 
