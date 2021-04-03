@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express()
+const chalk = require('chalk');
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -31,15 +32,16 @@ client.player.on('noResults', (message, query) => message.channel.send(`No resul
 
 client.player.on('searchResults', (message, query, tracks) => {
     const embed = new Discord.MessageEmbed()
-    .setAuthor(`Here are your search results for ${query}!`)
-    .setDescription(tracks.map((t, i) => `${i+1}. ${t.title}`))
-    .setFooter('Send the number of the song you want to play!')
+    .setColor('#7a2f8f')
+    .setAuthor(`🎵🎵 Here are your search results for ${query}! 🎵🎵`)
+    .setDescription(tracks.map((t, i) => `***${i+1}. ${t.title}***\n`))
+    .setFooter(`Send the number of the song you want to play!`)
     message.channel.send(embed);
 
 })
 
 client.on("ready", () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(chalk.bold(`Logged in as ${client.user.tag}!`));
 });
 
 
